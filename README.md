@@ -7,7 +7,7 @@ CoachMarks is a component, inspired by Material Design [Feature Discovery](https
 
 ## Getting started
 
-CoachMarks supports iOS 8+ and is available for installation using Carthage.
+CoachMarks supports iOS 8+ and is available for installation using Carthage or CocoaPods.
 
 ### [Carthage](https://github.com/Carthage/Carthage/#readme)
 
@@ -16,6 +16,15 @@ Just add CoachMarks to your `Cartfile`:
 
 ```
 github "pNre/CoachMarks" ~> 1.0
+```
+
+### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
+
+Just add CoachMarks to your `Podfile`:
+
+
+```
+pod "CoachMarks"
 ```
 
 ## Usage
