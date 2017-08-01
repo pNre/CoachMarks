@@ -258,12 +258,18 @@ public class CoachmarkView: UIView {
             self.textLabel.alpha = 1
         }
 
-        if focusingOnElement, let snapshot = view.snapshot(of: rect, from: view) {
+        let dimension = sqrt(rect.width * rect.width + rect.height * rect.height)
+        let snapshotRect = CGRect(x: rect.origin.x + (rect.width - dimension) / 2.0,
+                                  y: rect.origin.y + (rect.height - dimension) / 2.0,
+                                  width: dimension,
+                                  height: dimension).integral.intersection(view.bounds)
+
+        if focusingOnElement, let snapshot = view.snapshot(of: snapshotRect, from: view) {
 
             view.layoutIfNeeded()
 
             snapshotView = UIImageView(image: snapshot)
-            snapshotView?.frame = rect
+            snapshotView?.frame = snapshotRect
 
             innerCircle.isHidden = false
             innerCircle.animatePath(withDuration: animationDuration, fromValue: 0.0)
