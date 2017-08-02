@@ -17,6 +17,8 @@ class ViewController: UIViewController {
 
         super.viewDidLoad()
 
+        coachmark.delegate = self
+
         view.addSubview(coachmark)
 
         coachmark.translatesAutoresizingMaskIntoConstraints = false
@@ -69,6 +71,17 @@ class ViewController: UIViewController {
         coachmark.textLabel.text = "The pineapple (Ananas comosus) is a tropical plant with an edible multiple fruit consisting of coalesced berries."
 
         coachmark.present(in: view, from: button.frame, focusingOnElement: true)
+
+    }
+
+}
+
+// MARK: - 
+extension ViewController: CoachmarkViewDelegate {
+
+    func coachmarkViewDidComplete(_ view: CoachmarkView) {
+
+        print("Coachmark did complete")
 
     }
 

@@ -14,8 +14,8 @@ public class CoachmarkView: UIView {
     fileprivate static let dismissalAnimationKey = "dismissalAnimationKey"
 
     // MARK: - Properties
-    weak var delegate: CoachmarkViewDelegate?
-    weak var appearanceDelegate: CoachmarkViewAppearanceDelegate?
+    public weak var delegate: CoachmarkViewDelegate?
+    public weak var appearanceDelegate: CoachmarkViewAppearanceDelegate?
 
     private var animationDuration: TimeInterval {
         return appearanceDelegate?.coachmarkViewAnimationsDuration(self) ?? 0.2
