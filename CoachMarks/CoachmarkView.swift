@@ -317,7 +317,7 @@ public class CoachmarkView: UIView {
 // MARK: - Gesture recognizer
 extension CoachmarkView: UIGestureRecognizerDelegate {
 
-    func tapAction(_ recognizer: UITapGestureRecognizer) {
+    @objc func tapAction(_ recognizer: UITapGestureRecognizer) {
 
         guard recognizer.state == .recognized else {
             return
