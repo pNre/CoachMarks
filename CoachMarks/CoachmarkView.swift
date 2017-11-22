@@ -250,7 +250,7 @@ public class CoachmarkView: UIView {
         let snapshotRect = CGRect(x: rect.origin.x + (rect.width - dimension) / 2.0,
                                   y: rect.origin.y + (rect.height - dimension) / 2.0,
                                   width: dimension,
-                                  height: dimension).integral.intersection(view.bounds)
+                                  height: dimension).intersection(view.bounds)
 
         if focusingOnElement, let snapshot = view.snapshot(of: snapshotRect, from: view) {
 
@@ -346,7 +346,7 @@ extension CoachmarkView: CircularViewDelegate {
         rect.size = CGSize(width: dimension, height: dimension)
 
         //  Cut a hole in the center of the path
-        let cutoutPath = UIBezierPath(roundedRect: rect.centered(in: path.bounds).integral, cornerRadius: dimension / 2.0)
+        let cutoutPath = UIBezierPath(roundedRect: rect.centered(in: path.bounds), cornerRadius: dimension / 2.0)
         path.append(cutoutPath.reversing())
 
         return path

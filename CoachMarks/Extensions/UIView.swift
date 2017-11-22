@@ -20,9 +20,11 @@ extension UIView {
 
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, UIScreen.main.scale)
 
-        let context = UIGraphicsGetCurrentContext()
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
 
-        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        view.layer.render(in: context)
 
         defer {
             UIGraphicsEndImageContext()
