@@ -143,13 +143,12 @@ public class CoachmarkView: UIView {
         //  outer circle
         outerCircle.frame = {
 
-            let size = CGSize(width: ceil(frame.width * 2.0),
-                              height: ceil(frame.width * 2.0))
+            let size = ceil(min(frame.width, frame.height) * 2.0)
 
-            let origin = CGPoint(x: sourceRect.midX - (size.width / 2.0),
-                                 y: sourceRect.midY - (size.height / 2.0))
+            let origin = CGPoint(x: sourceRect.midX - (size / 2.0),
+                                 y: sourceRect.midY - (size / 2.0))
 
-            return CGRect(origin: origin, size: size)
+            return CGRect(origin: origin, size: .init(width: size, height: size))
 
         }()
 
@@ -176,7 +175,7 @@ public class CoachmarkView: UIView {
             let inscribedRectX = (outerCircle.bounds.width - diameter) / 2.0 + (diameter - inscribedRectWidth) / 2.0
             let inscribedRectY = (outerCircle.bounds.height - diameter) / 2.0 + radius / 2.0
 
-            let inscribedRect = CGRect(x: inscribedRectX, y: inscribedRectY, width: inscribedRectWidth, height: inscribedRectHeight).integral
+            let inscribedRect = CGRect(x: inscribedRectX, y: inscribedRectY, width: inscribedRectWidth, height: inscribedRectHeight)
 
             //  rect relative to self
             let relativeInscribedRect = outerCircle.convert(inscribedRect, to: self)
@@ -205,18 +204,7 @@ public class CoachmarkView: UIView {
 
             }
 
-            var frameWithEdges = UIEdgeInsetsInsetRect(intersection, insets)
-
-            //  adjust the label size to fit the content
-            let size = textLabel.sizeThatFits(frameWithEdges.size)
-
-            if frameWithEdges.midY < outerCircle.bounds.midY {
-                frameWithEdges.origin.y += (frameWithEdges.size.height - size.height) / 2.0
-            }
-
-            frameWithEdges.size.height = size.height
-
-            return frameWithEdges
+            return UIEdgeInsetsInsetRect(intersection, insets)
 
         }()
 
