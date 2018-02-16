@@ -32,6 +32,8 @@ public class CoachmarkView: UIView {
         }
     }
 
+    public var sizeScale: CGFloat = 1.0
+
     /// Area that the coachmark is focusing on.
     fileprivate private(set) var sourceRect: CGRect = .zero {
         didSet {
@@ -143,7 +145,7 @@ public class CoachmarkView: UIView {
         //  outer circle
         outerCircle.frame = {
 
-            let size = ceil(min(frame.width, frame.height) * 2.0)
+            let size = ceil(min(frame.width, frame.height) * 2.0) * sizeScale
 
             let origin = CGPoint(x: sourceRect.midX - (size / 2.0),
                                  y: sourceRect.midY - (size / 2.0))
