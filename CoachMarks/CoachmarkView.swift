@@ -11,7 +11,7 @@ import UIKit
 public class CoachmarkView: UIView {
 
     /// Key of the dismissal animation when the coachmark was dismissed
-    fileprivate static let dismissalAnimationKey = "dismissalAnimationKey"
+    private static let dismissalAnimationKey = "dismissalAnimationKey"
 
     // MARK: - Properties
     public weak var delegate: CoachmarkViewDelegate?
@@ -35,7 +35,7 @@ public class CoachmarkView: UIView {
     public var sizeScale: CGFloat = 1.0
 
     /// Area that the coachmark is focusing on.
-    fileprivate private(set) var sourceRect: CGRect = .zero {
+    private var sourceRect: CGRect = .zero {
         didSet {
             subviews.forEach { $0.setNeedsLayout() }
             setNeedsLayout()
@@ -44,7 +44,7 @@ public class CoachmarkView: UIView {
     }
 
     /// Background CircularView.
-    fileprivate private(set) lazy var outerCircle: CircularView = {
+    private lazy var outerCircle: CircularView = {
 
         let view = CircularView()
 
@@ -60,7 +60,7 @@ public class CoachmarkView: UIView {
     }()
 
     /// CircularView used as background for the `snapshotView` (when visible).
-    fileprivate private(set) lazy var innerCircle: CircularView = {
+    private lazy var innerCircle: CircularView = {
 
         let view = CircularView()
 
