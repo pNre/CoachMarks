@@ -98,7 +98,7 @@ public class CircularView: UIView {
         pathAnimation.duration = pathAnimation.settlingDuration
 
         pathAnimation.isRemovedOnCompletion = false
-        pathAnimation.fillMode = kCAFillModeForwards
+        pathAnimation.fillMode = CAMediaTimingFillMode.forwards
 
         pathAnimation.setValue(true, forKey: "isCircularViewPathAnimation")
         pathAnimation.setValue(animationTag, forKey: CircularView.animationTagKey)
@@ -126,7 +126,7 @@ public class CircularView: UIView {
         pathAnimation.duration = duration
 
         pathAnimation.isRemovedOnCompletion = false
-        pathAnimation.fillMode = kCAFillModeForwards
+        pathAnimation.fillMode = CAMediaTimingFillMode.forwards
 
         pathAnimation.setValue(true, forKey: "isCircularViewPathAnimation")
         pathAnimation.setValue(animationTag, forKey: CircularView.animationTagKey)
@@ -151,7 +151,7 @@ public class CircularView: UIView {
         pathAnimation.duration = duration
 
         pathAnimation.isRemovedOnCompletion = false
-        pathAnimation.fillMode = kCAFillModeForwards
+        pathAnimation.fillMode = CAMediaTimingFillMode.forwards
 
         pathAnimation.setValue(true, forKey: "isCircularViewPathAnimation")
         pathAnimation.setValue(animationTag, forKey: CircularView.animationTagKey)

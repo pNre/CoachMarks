@@ -206,7 +206,7 @@ public class CoachmarkView: UIView {
 
             }
 
-            return UIEdgeInsetsInsetRect(intersection, insets)
+            return intersection.inset(by: insets)
 
         }()
 
