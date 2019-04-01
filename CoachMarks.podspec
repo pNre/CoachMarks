@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CoachMarks"
-  s.version      = "1.0.9"
+  s.version      = "1.1.0"
   s.summary      = "CoachMarks is a component that can be used to focus the user attention on parts of the UI."
   s.description  = <<-DESC
   CoachMarks is a component, inspired by Material Design Feature Discovery guidelines, that can be used in the onboarding process of iOS applications to focus the user attention on parts of the UI.
@@ -15,5 +15,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/pNre/CoachMarks.git", :tag => "#{s.version}" }
   s.source_files  = "CoachMarks/**/*.{swift}"
   s.static_framework = true
+  s.swift_versions = "5.0"
 
 end
